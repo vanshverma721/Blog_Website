@@ -33,9 +33,9 @@ const Auth = () => {
               </p>
             </>
           ) : signReq === "sign-in" ? (
-            <SignIn />
+            <SignIn setSignReq={setSignReq} />
           ) : signReq == "sign-up" ? (
-            <SignUp />
+            <SignUp setSignReq={setSignReq} />
           ) : null
           }
           <p className='md:w-[30rem] mx-auto text-center text-sm mb-[3rem]'>
