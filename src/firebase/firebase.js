@@ -2,10 +2,10 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 import { getStorage } from "firebase/storage";
-import { getFirestore } from "firebase/firestore"
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-    apiKey: process.env.REACT_APP_API_KEY,
+    apiKey: "AIzaSyCuiiGlwkhOsyY6CgIHSq_TdajhRa1WQ9c",
     authDomain: "fir-blog-79025.firebaseapp.com",
     projectId: "fir-blog-79025",
     storageBucket: "fir-blog-79025.appspot.com",

@@ -10,7 +10,7 @@ const Context = ({ children }) => {
     const [currentUser, setCurrentUser] = useState(false)
 
     return (
-        <BlogContext.Provider>
+        <BlogContext.Provider value={{ currentUser, setCurrentUser }}>
             {children}
         </BlogContext.Provider>
     )
