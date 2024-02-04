@@ -1,13 +1,18 @@
-import React from 'react'
-import { BsMedium } from "react-icons/bs"
-import { CiSearch } from "react-icons/ci"
-import { LiaEditSolid } from "react-icons/lia"
-import { IoMdNotificationsOutline } from "react-icons/io"
-import { MdKeyboardArrowDown } from "react-icons/md"
-import { Link } from 'react-router-dom'
-import Search from './Search'
+import React, { useState } from 'react';
+import { BsMedium } from "react-icons/bs";
+import { CiSearch } from "react-icons/ci";
+import { LiaEditSolid } from "react-icons/lia";
+import { IoMdNotificationsOutline } from "react-icons/io";
+import { MdKeyboardArrowDown } from "react-icons/md";
+import { Link } from 'react-router-dom';
+import Search from './Search';
+import Modal from "../../../utils/Modal";
+import UserModal from "../Header/UserModal"
 
 const HomeHeader = () => {
+
+  const [modal, setModal] = useState(true);
+
   return (
     <header className="border-b border-gray-200">
       <div className="size h-[60px] flex items-center justify-between">
@@ -34,14 +39,19 @@ const HomeHeader = () => {
             <IoMdNotificationsOutline />
           </span>
           <div className="flex items-center relative">
-            <img 
+            <img
               className="w-[2.3rem] hr-[2.3rem] object-cover rounded-full cursor-pointer"
-              src="/profile.png" 
-              alt="profile-img" 
+              src="/profile.png"
+              alt="profile-img"
             />
             <span className="text-gray-500 cursor-pointer">
               <MdKeyboardArrowDown />
             </span>
+            <Modal modal={modal} setModal={setModal}>
+              <div>
+                <UserModal />
+              </div>
+            </Modal>
           </div>
         </div>
       </div>
