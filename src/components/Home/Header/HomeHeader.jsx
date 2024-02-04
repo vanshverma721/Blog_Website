@@ -12,6 +12,7 @@ import UserModal from "../Header/UserModal"
 const HomeHeader = () => {
 
   const [modal, setModal] = useState(false);
+  const hidden = modal ? "visible opacity-100" : "invisible opacity-0";
 
   return (
     <header className="border-b border-gray-200">
@@ -40,6 +41,7 @@ const HomeHeader = () => {
           </span>
           <div className="flex items-center relative">
             <img
+              onClick={() => setModal(true)}
               className="w-[2.3rem] hr-[2.3rem] object-cover rounded-full cursor-pointer"
               src="/profile.png"
               alt="profile-img"
@@ -47,8 +49,8 @@ const HomeHeader = () => {
             <span className="text-gray-500 cursor-pointer">
               <MdKeyboardArrowDown />
             </span>
-            <Modal modal={modal} setModal={setModal}>
-              <div className={`${modal ? "visible opacity-100%" : "invisible opacity-0"} transition-all duration-500`}>
+            <Modal modal={modal} setModal={setModal} hidden={hidden} >
+              <div className={`${modal ? "visible opacity-100%" : "invisible opacity-0"} transition-all duration-200`}>
                 <UserModal />
               </div>
             </Modal>
