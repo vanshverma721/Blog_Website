@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { BsMedium } from "react-icons/bs";
-import { CiSearch } from "react-icons/ci";
 import { LiaEditSolid } from "react-icons/lia";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { MdKeyboardArrowDown } from "react-icons/md";
