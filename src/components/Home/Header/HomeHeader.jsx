@@ -11,7 +11,7 @@ import UserModal from "../Header/UserModal"
 
 const HomeHeader = () => {
 
-  const [modal, setModal] = useState(true);
+  const [modal, setModal] = useState(false);
 
   return (
     <header className="border-b border-gray-200">
@@ -48,7 +48,7 @@ const HomeHeader = () => {
               <MdKeyboardArrowDown />
             </span>
             <Modal modal={modal} setModal={setModal}>
-              <div>
+              <div className={`${modal ? "visible opacity-100%" : "invisible opacity-0"} transition-all duration-500`}>
                 <UserModal />
               </div>
             </Modal>

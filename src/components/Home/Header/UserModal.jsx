@@ -6,6 +6,7 @@ import { HiOutlineChartBar } from "react-icons/hi";
 import { LiaEditSolid } from "react-icons/lia";
 import { Blog } from "../../../Context/Context";
 import { Link } from 'react-router-dom';
+import { secretEmail } from '../../../utils/helper';
 
 const UserModal = () => {
 
@@ -44,14 +45,15 @@ const UserModal = () => {
       </Link>
       <div className="flex flex-col gap-4 border-b border-gray-300 pb-5">
         {userModal.map((item, i) => (
-          <Link className="flex items-center gap-2 text-gray-500 hover:text-black/70" key={i} path={item.path}>
+          <Link key={i} className="flex items-center gap-2 text-gray-500 hover:text-black/70" path={item.path}>
             <span className="text-2xl">{item.icon}</span>
             <h2 className="text-md">{item.title}</h2>
           </Link>
         ))}
       </div>
-      <button>
-        
+      <button className="flex flex-col pt-5 cursor-pointer hover:text-black/85">
+        Sign Out
+        <span className="text-sm">{secretEmail(currentUser?.email)}</span>
       </button>
     </section>
   )
