@@ -2,9 +2,8 @@ import React, { useState } from 'react'
 import { CiSearch } from "react-icons/ci";
 import Modal from '../../../utils/Modal';
 
-const Search = () => {
-
-  const [modal, setModal] = useState(true);
+const Search = ({ modal, setModal }) => {
+  
   const hidden = modal ? "visible opacity-100" : "invisible opacity-0";
 
   return (
