@@ -4,8 +4,9 @@ import ProfileLists from "./Activities/ProfileLists";
 import ProfileAbout from "./Activities/ProfileAbout";
 import Modal from "../../../utils/Modal";
 import { LiaTimesSolid } from "react-icons/lia";
-import {IoSettingsSharp} from "react-icons/io5";
+import { IoSettingsSharp } from "react-icons/io5";
 import { discoverActions } from "../../../data";
+import EditProfile from './EditProfile';
 
 const Profile = () => {
 
@@ -28,6 +29,8 @@ const Profile = () => {
 
   const [modal, setModal] = useState(false);
   const hidden = modal ? "visible opacity-100" : "invisible opacity-0";
+
+  const [editModal, setEditModal] = useState(true);
 
   return (
     <section className="size flex gap-[4rem] relative">
@@ -67,7 +70,7 @@ const Profile = () => {
             <img className="w-[3.5rem] h-[3.5rem] object-cover rounded-full" src="/profile.png" alt="profile-img" />
             <h2 className="py-2 font-bold capitalize">Vansh Verma</h2>
             <p className="text-gray-500 first-letter:uppercase text-sm">I am a content creator in Youtube channel</p>
-            <button className="text-green-700 pt-6 text-sm w-fit">Edit Profile</button>
+            <button onClick={() => setEditModal(true)} className="text-green-700 pt-6 text-sm w-fit">Edit Profile</button>
             <div className="flex-[1] flex items-center flex-wrap gap-3 pt-8">
               {discoverActions.map((item) => (
                 <button key={item} className="text-xs text-black">{item}</button>
@@ -78,6 +81,7 @@ const Profile = () => {
 
         </div>
       </Modal>
+      {editModal && <EditProfile editModal={editModal} setEditModal={setEditModal} />}
 
     </section>
   )
