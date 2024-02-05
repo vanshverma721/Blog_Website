@@ -30,7 +30,7 @@ const Profile = () => {
   const [modal, setModal] = useState(false);
   const hidden = modal ? "visible opacity-100" : "invisible opacity-0";
 
-  const [editModal, setEditModal] = useState(true);
+  const [editModal, setEditModal] = useState(false);
 
   return (
     <section className="size flex gap-[4rem] relative">
